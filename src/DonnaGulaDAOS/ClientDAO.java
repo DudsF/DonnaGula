@@ -81,12 +81,13 @@ public class ClientDAO {
 		String sql = "update cliente set nome=?, endereco=?, email=?, contato=?, cartao=? senha=? where id=?;";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setString(1, cliente.getMatricula());
-			stmt.setString(2, cliente.getNome());
-			stmt.setString(3, cliente.getCPF());
-			stmt.setString(4, cliente.getEndereco());
-			stmt.setDate(5, new java.sql.Date(cliente.getDataNascimento().getTimeInMillis()));
-			stmt.setLong(6, cliente.getId());
+			stmt.setString(1, cliente.getNome());
+			stmt.setString(2, cliente.getEndereco());
+			stmt.setString(3, cliente.getEmail());
+			stmt.setInt(4, cliente.getContato());
+			stmt.setString(5, cliente.getCartao());
+			stmt.setString(6, cliente.getSenha());
+			stmt.setLong(7, cliente.getId());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -96,10 +97,10 @@ public class ClientDAO {
 		return true;
 	}
 
-	public boolean remover(Aluno aluno) {
+	public boolean remover(Cliente cliente) {
 		try {
-			PreparedStatement stmt = connection.prepareStatement("delete from alunos where id=?;");
-			stmt.setLong(1, aluno.getId());
+			PreparedStatement stmt = connection.prepareStatement("delete from cliente where id=?;");
+			stmt.setLong(1, cliente.getId());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -109,27 +110,25 @@ public class ClientDAO {
 		return true;
 	}
 
-	public Aluno getById(Long id) {
-		Aluno result = null;
+	public Cliente getById(Long id) {
+		Cliente result = null;
 
 		try {
-			PreparedStatement stmt = this.connection.prepareStatement("select * from alunos where id = ?;");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from cliente where id = ?;");
 			stmt.setLong(1, id);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
 				// criando o objeto Aluno
-				result = new Aluno();
+				result = new Cliente();
 				result.setId(rs.getLong("id"));
-				result.setMatricula(rs.getString("matricula"));
 				result.setNome(rs.getString("nome"));
-				result.setCPF(rs.getString("CPF"));
 				result.setEndereco(rs.getString("endereco"));
+				result.setEmail(rs.getString("email"));
+				result.setContato(rs.getInt("contato"));
+				result.setCartao(rs.getString("cartao"));
+				result.setSenha(rs.getString("senha"));
 
-				// montando a data atrav�s do Calendar
-				Calendar data = Calendar.getInstance();
-				data.setTime(rs.getDate("dataNascimento"));
-				result.setDataNascimento(data);
 			}
 			rs.close();
 			stmt.close();
@@ -140,23 +139,23 @@ public class ClientDAO {
 		return result;
 	}
 	
-	public Aluno getByMatricula(String matricula) {
-		Aluno result = null;
+	public Cliente getByNome(String nome) {
+		Cliente result = null;
 
 		try {
-			PreparedStatement stmt = this.connection.prepareStatement("select * from alunos where matricula = ?;");
-			stmt.setString(1, matricula);
+			PreparedStatement stmt = this.connection.prepareStatement("select * from cliente where nome = ?;");
+			stmt.setString(1, nome);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				result = new Aluno();
+				result = new Cliente();
 				result.setId(rs.getLong("id"));
 				result.setNome(rs.getString("nome"));
-				result.setMatricula(rs.getString("matricula"));
 				result.setEndereco(rs.getString("endereco"));
-				Calendar dataNascimento = Calendar.getInstance();
-				dataNascimento.setTime(rs.getDate("dataNascimento"));
-				result.setDataNascimento(dataNascimento);
+				result.setEmail(rs.getString("email"));
+				result.setContato(rs.getInt("contato"));
+				result.setCartao(rs.getString("cartao"));
+				result.setSenha(rs.getString("senha"));
 			}
 			rs.close();
 			stmt.close();
@@ -167,26 +166,26 @@ public class ClientDAO {
 		return result;
 	}
 	
-	public List<Aluno> getAlunos() {
-		List<Aluno> result = new ArrayList<>();
+	public List<Cliente> getCliente() {
+		List<Cliente> result = new ArrayList<>();
 
 		try {
-			PreparedStatement stmt = this.connection.prepareStatement("select * from alunos;");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from cliente;");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				// criando o objeto aluno
-				Aluno alun = new Aluno();
-				alun.setId(rs.getLong("id"));
-				alun.setNome(rs.getString("nome"));
-				alun.setCPF(rs.getString("cpf"));
-				alun.setMatricula(rs.getString("matricula"));
-				alun.setEndereco(rs.getString("endereco"));
-				Calendar dataNascimento = Calendar.getInstance();
-				dataNascimento.setTime(rs.getDate("dataNascimento"));
-				alun.setDataNascimento(dataNascimento);
-			
-				result.add(alun);
+				// criando o objeto Cliente
+				Cliente cliente = new Cliente();
+				cliente.setId(rs.getLong("id"));
+				cliente.setNome(rs.getString("nome"));
+				cliente.setEndereco(rs.getString("endereco"));
+				cliente.setEmail(rs.getString("email"));
+				cliente.setContato(rs.getInt("contato"));
+				cliente.setCartao(rs.getString("cartao"));
+				cliente.setSenha(rs.getString("senha"));
+
+				// adicionando o objeto � lista
+				result.add(cliente);
 			}
 			rs.close();
 			stmt.close();
@@ -197,27 +196,27 @@ public class ClientDAO {
 		}
 
 	}
-	public Aluno getAlunoByID(Long id) {
+	public Cliente getClienteByID(Long id) {
 		try {
 
-			Aluno alun = null;
+			Cliente cliente = null;
 			PreparedStatement stmt = this.connection.prepareStatement("select * from alunos where id=?;");
 			stmt.setLong(1, id);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				alun = new Aluno();
-				alun.setId(rs.getLong("id"));
-				alun.setNome(rs.getString("nome"));
-				alun.setCPF(rs.getString("cpf"));
-				alun.setMatricula(rs.getString("matricula"));
-				Calendar dataNascimento = Calendar.getInstance();
-				dataNascimento.setTime(rs.getDate("dataNascimento"));
-				alun.setDataNascimento(dataNascimento);
+				cliente = new Cliente();
+				cliente.setId(rs.getLong("id"));
+				cliente.setNome(rs.getString("nome"));
+				cliente.setEndereco(rs.getString("endereco"));
+				cliente.setEmail(rs.getString("email"));
+				cliente.setContato(rs.getInt("contato"));
+				cliente.setCartao(rs.getString("cartao"));
+				cliente.setSenha(rs.getString("senha"));
 			}
 			rs.close();
 			stmt.close();
-			return alun;
+			return cliente;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

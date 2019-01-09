@@ -12,7 +12,7 @@ ul {
 
 body {
 	margin:0px;
-	background-image: url("http://www.saojudastadeu.edu.br/upload/page/biblioteca2.jpg");
+	background-image: url("https://img.elo7.com.br/product/original/C79370/papel-de-parede-4e3-bd-adesivo-lanches.jpg");
     background-repeat: no-repeat;
 	background-size: 1600px 800px;
 }

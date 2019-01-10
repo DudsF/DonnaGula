@@ -199,7 +199,7 @@ span.psw {
  <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Salgados</a>
     <div class="dropdown-content">
-      <a href="/DonnaGula/salgados/lista">Cardápio</a>
+      <a href="/DonnaGula/salgados/">Cardápio</a>
       <a href="/DonnaGula/salgados/form">Disponibilizar</a>
     </div>
   </li>

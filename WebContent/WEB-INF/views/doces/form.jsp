@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Emprestimo</title>
+<title>Cadastrando doces</title>
 </head>
+
 <style>
 body {
 	background-image: url("http://weekon.com.ar/wp-content/uploads/2016/12/biblio-web.jpg");
@@ -25,7 +26,13 @@ input[type=text], select, textarea {
 	border-radius: 5px;
 	resize: vertical;
 }
-
+input[type=password], select, textarea {
+	width: 90%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: vertical;
+}
 label {
 	padding: 12px 12px 12px 0;
 	display: inline-block;
@@ -44,6 +51,7 @@ input[type=submit] {
 input[type=submit]:hover {
 	background-color: LightCoral;
 }
+
 .container {
  	position: absolute;
     top: 50%;
@@ -59,9 +67,10 @@ input[type=submit]:hover {
 	text-align: center;
 	margin: 0 auto;
 }
+
 .col-25 {
 	float: left;
-	width: 15%;
+	width: 25%;
 	margin-top: 8px;
 }
 
@@ -70,6 +79,8 @@ input[type=submit]:hover {
 	width: 70%;
 	margin-top: 5px;
 }
+
+
 .row:after {
 	content: "";
 	display: table;
@@ -81,52 +92,91 @@ input[type=submit]:hover {
 		width: 100%;
 		margin-top: 0;
 	}
+	
+}
 </style>
+</head>
 <body>
 <c:import url="../menu.jsp"></c:import>
 
 	<div class="container">
 	<div class="centralizado">
-		<h1>Emprestimo</h1>
-	</div>
-	<form action="/BibliotecaS/emprestimo/" method="post">
-		
-	
-		<div class="row">
+		<h1>Cadastrar-se</h1>
+		</div>
+		<form action="/DonnaGula/cliente" method="post">
 			
+			<fieldset>
+        		<legend>Upload Foto</legend>
+        		<p>Sua foto:<br>
+       			<input name="foto" type="file" value="Carregue sua foto!" id="foto">
+       			</p>
+        	</fieldset>
+        	
+			<div class="row">
 				<div class="col-25">
-					<label for="fname">Aluno</label>
+					<label for="fname">Nome:</label>
 				</div>
-				
 				<div class="col-75">
-				<select name="aluno.id">
-				<c:forEach var="aluno" items="${alunos }">
-					<option value="${aluno.id }">${aluno.nome }</option>
-				</c:forEach>
-				</select>
+				<input type="text" id="fname" name="nome">
 				</div>
-		</div>
-		
-		
-		<div class="row">
-		
-				<div class="col-25">
-					<label for="fname">Livro</label>
-				</div>
-				
-				<div class="col-75">
-				<select name="livro.id">
-				<c:forEach var="livro" items="${livros }">
-					<option value="${livro.id }">${livro.titulo }</option>
-				</c:forEach>
-				</select>
-				</div>
-		</div>
-		
-		<div class="row">
-				<input type="submit" value="Emprestar">
 			</div>
-	</form>
+			
+
+			<div class="row">
+				<div class="col-25">
+					<label for="lname">Endereço:</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="lname" name="endereco" >
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-25">
+					<label for="country">Email:</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="lname" name="email">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-25">
+					<label for="country">Contato:</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="lname" name="contato" maxlength="9">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-25">
+					<label for="country">Cartão de credito:</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="lname" name="cartao" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="country">Senha:</label>
+				</div>
+				<div class="col-75">
+					<input type="password" id="lname" name="senha" >
+				</div>
+			</div>
+
+			<div class="row">
+				<input type="submit" value="Cadastrar"/>
+			
+			</div>
+			
+		</form>
 	</div>
+
+	
+
+
+
 </body>
 </html>

@@ -41,7 +41,7 @@
  	position: absolute;
     top: 50%;
     left: 50%;
-    width: 60%;
+    width: 50%;
     transform: translateY(-50%) translateX(-50%);
 	center;
 	border-radius: 5px;
@@ -63,33 +63,33 @@
 
 <div class="container">
 	<div class="centralizado">
-		<h1>Lista de clientes</h1>
+		<h1>Lista de alunos</h1>
 		</div>
 <table id="customers">
 		<thead>
 			<tr>
 				<th>Id</th>
+				<th>Matricula</th>
 				<th>Nome</th>
+				<th>CPF</th>
+				<th>Data de Nascimento</th>
 				<th>Endereço</th>
-				<th>Email</th>
-				<th>Contato</th>
-				<th>Cartão de credito</th>
-				<th>Senha</th>
 			</tr>
 			
 		</thead>
 		<tbody>
-			<c:forEach var="cliente" items="${cliente }">
+			<c:forEach var="aluno" items="${alunos }">
 				<tr>
 				
-					<td>${cliente.id }</td>
-					<td>${cliente.nome }</td>
-					<td>${cliente.endereco }</td>
-					<td>${cliente.email}</td>					
-					<td>${cliente.contato }</td>
-					<td>${cliente.cartao }</td>
-					<td>${cliente.senha}</td>
-					<td><a href="/DonnaGula/cliente/editar?id=${cliente.id }"> Editar </a></td>
+					<td>${aluno.id }</td>
+					<td>${aluno.matricula }</td>
+					<td>${aluno.nome }</td>
+					<td>${aluno.CPF }</td>
+					<td> <fmt:formatDate value="${aluno.dataNascimento.time}"
+        pattern="dd/MM/yyyy" /> </td>
+					
+					<td>${aluno.endereco }</td>
+					<td><a href="/BibliotecaS/alunos/remover?id=${aluno.id }"> remover </a></td>
 				</tr>
 				
 			</c:forEach>

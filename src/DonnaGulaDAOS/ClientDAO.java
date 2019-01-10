@@ -47,7 +47,7 @@ public class ClientDAO {
 
 	public List<Cliente> getLista() {
 		List<Cliente> result = new ArrayList<>();
-		String sql = "select * from alunos";
+		String sql = "select * from cliente";
 		
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -109,6 +109,7 @@ public class ClientDAO {
 		}
 		return true;
 	}
+	
 
 	public Cliente getById(Long id) {
 		Cliente result = null;
@@ -200,7 +201,7 @@ public class ClientDAO {
 		try {
 
 			Cliente cliente = null;
-			PreparedStatement stmt = this.connection.prepareStatement("select * from alunos where id=?;");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from cliente where id=?;");
 			stmt.setLong(1, id);
 			ResultSet rs = stmt.executeQuery();
 

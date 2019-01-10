@@ -22,7 +22,7 @@ img {
 <c:import url= "menu.jsp"></c:import>
 
 
-<img src="http://i67.tinypic.com/dw6ufr.jpg" alt="a4s7ja" style="width:55%;" >
+<img src="http://i65.tinypic.com/2pz03nr.jpg" alt="a4s7ja" style="width:72%;" >
 
 </body>
 

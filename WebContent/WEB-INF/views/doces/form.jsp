@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Cadastrando doces</title>
 </head>
-
 <style>
 body {
 	background-image: url("http://weekon.com.ar/wp-content/uploads/2016/12/biblio-web.jpg");

@@ -183,7 +183,7 @@ public class ClientDAO {
 				cliente.setEmail(rs.getString("email"));
 				cliente.setContato(rs.getInt("contato"));
 				cliente.setCartao(rs.getString("cartao"));
-				cliente.setSenha(rs.getString("senha"));
+				//cliente.setSenha(rs.getString("senha"));
 
 				// adicionando o objeto � lista
 				result.add(cliente);

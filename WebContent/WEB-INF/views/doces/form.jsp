@@ -101,9 +101,9 @@ input[type=submit]:hover {
 
 	<div class="container">
 	<div class="centralizado">
-		<h1>Cadastrar-se</h1>
+		<h1>Disponibilizar doces</h1>
 		</div>
-		<form action="/DonnaGula/cliente" method="post">
+		<form action="/DonnaGula/doces" method="post">
 			
 			<fieldset>
         		<legend>Upload Foto</legend>
@@ -124,50 +124,25 @@ input[type=submit]:hover {
 
 			<div class="row">
 				<div class="col-25">
-					<label for="lname">Endereço:</label>
+					<label for="lname">Recheio:</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="lname" name="endereco" >
+					<input type="text" id="lname" name="recheio" >
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-25">
-					<label for="country">Email:</label>
+					<label for="country">Preço:</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="lname" name="email">
+					<input type="text" id="lname" name="preco">
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-25">
-					<label for="country">Contato:</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="lname" name="contato" maxlength="9">
-				</div>
-			</div>
 
 			<div class="row">
-				<div class="col-25">
-					<label for="country">Cartão de credito:</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="lname" name="cartao" >
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="country">Senha:</label>
-				</div>
-				<div class="col-75">
-					<input type="password" id="lname" name="senha" >
-				</div>
-			</div>
-
-			<div class="row">
-				<input type="submit" value="Cadastrar"/>
+				<input type="submit" value="Disponibilizar"/>
 			
 			</div>
 			

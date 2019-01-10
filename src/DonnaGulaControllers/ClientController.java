@@ -49,7 +49,7 @@ public class ClientController {
 }
 	@RequestMapping ("/cliente/alterar")
 	public String alterar(Cliente cliente) {
-		System.out.println("Chamou o metodo remover");
+		System.out.println("Chamou o metodo alterar");
 		ClientDAO clientDAO = new ClientDAO();
 		clientDAO.alterar(cliente);
 		

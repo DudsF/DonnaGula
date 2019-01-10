@@ -191,7 +191,7 @@ span.psw {
   <a href="javascript:void(0)" class= "dropbtn">Doces</a>
   <div class="dropdown-content">
       <a href="/DonnaGula/doces/cardapio">Cardápio</a>
-      <a href="/DonnaGula/doces/form">Encomendar</a>
+      <a href="/DonnaGula/doces/form">Dizponibilizar</a>
 
     </div></li>
  
@@ -203,6 +203,9 @@ span.psw {
       <a href="/DonnaGula/salgados/">Encomendar</a>
     </div>
   </li>
+  
+    <li><a class="dropbtn" href="/DonnaGula/cliente/">Lista de cadastrados</a></li>
+  
   <li>
  <button onclick="document.getElementById('id01').style.display='block'" style="float:right">Entrar</button>
 

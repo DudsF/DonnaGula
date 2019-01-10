@@ -74,7 +74,7 @@
 				<th>Email</th>
 				<th>Contato</th>
 				<th>Cartão de credito</th>
-				<th>Senha</th>
+			
 			</tr>
 			
 		</thead>
@@ -88,8 +88,9 @@
 					<td>${cliente.email}</td>					
 					<td>${cliente.contato }</td>
 					<td>${cliente.cartao }</td>
-					<td>${cliente.senha}</td>
+					
 					<td><a href="/DonnaGula/cliente/editar?id=${cliente.id }"> Editar </a></td>
+					<td><a href="/DonnaGula/cliente/remover?id=${cliente.id }"> Remover </a></td>
 				</tr>
 				
 			</c:forEach>

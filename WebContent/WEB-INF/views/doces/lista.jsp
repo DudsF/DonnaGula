@@ -55,7 +55,7 @@
 	color: LightCoral ;
 }
 </style>
-<title>Listagem de aluno</title>
+<title>Cardápio</title>
 </head>
 <body>
 <c:import url= "../menu.jsp"></c:import>
@@ -63,33 +63,27 @@
 
 <div class="container">
 	<div class="centralizado">
-		<h1>Lista de alunos</h1>
+		<h1>Cardápio</h1>
 		</div>
 <table id="customers">
 		<thead>
 			<tr>
 				<th>Id</th>
-				<th>Matricula</th>
 				<th>Nome</th>
-				<th>CPF</th>
-				<th>Data de Nascimento</th>
-				<th>Endereço</th>
+				<th>Recheio</th>
+				<th>Preço</th>
 			</tr>
 			
 		</thead>
 		<tbody>
-			<c:forEach var="aluno" items="${alunos }">
+			<c:forEach var="doces" items="${doces }">
 				<tr>
 				
-					<td>${aluno.id }</td>
-					<td>${aluno.matricula }</td>
-					<td>${aluno.nome }</td>
-					<td>${aluno.CPF }</td>
-					<td> <fmt:formatDate value="${aluno.dataNascimento.time}"
-        pattern="dd/MM/yyyy" /> </td>
-					
-					<td>${aluno.endereco }</td>
-					<td><a href="/BibliotecaS/alunos/remover?id=${aluno.id }"> remover </a></td>
+					<td>${doces.id }</td>
+					<td>${doces.nome }</td>
+					<td>${doces.recheio }</td>
+					<td>${doces.preco }</td>
+					<td><a href="/DonnaGula/doces/remover?id=${doces.id }"> remover </a></td>
 				</tr>
 				
 			</c:forEach>

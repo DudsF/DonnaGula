@@ -13,7 +13,9 @@
     width: 100%;
     top: 50%;
     left: 50%;
-    center; 
+    center;
+    
+     
 }
 
 #customers td, #customers th {
@@ -46,54 +48,49 @@
 	background-color: #ccc;
 	padding: 20px;
 }
-.centraliza {
+.centralizado {
 	-webkit-text-stroke-width: 1px; 
     -webkit-text-stroke-color: #000;
 	text-align: center;
 	color: LightCoral ;
 }
 </style>
-<title>Listagem de livro</title>
+<title>Cardápio</title>
 </head>
 <body>
 <c:import url= "../menu.jsp"></c:import>
-<c:import url= "../cabecalho.jsp" />
+<c:import url="../cabecalho.jsp" />
 
-	<div class="container">
-		<div class= "centraliza">
-			<h1>Lista de livros</h1>
+<div class="container">
+	<div class="centralizado">
+		<h1>Cardápio de Salgados</h1>
 		</div>
 <table id="customers">
-	
 		<thead>
 			<tr>
-				
 				<th>Id</th>
-				<th>Título</th>
-				<th>Autor</th>
-				<th>Editora</th>
-				<th>Ano de Publicação</th>
-				<th>Edição</th>
+				<th>Nome</th>
+				<th>Recheio</th>
+				<th>Preço</th>
 			</tr>
+			
 		</thead>
 		<tbody>
-			<c:forEach var="livro" items="${livros }">
+			<c:forEach var="salgados" items="${salgados }">
 				<tr>
-					<td>${livro.id }</td>
-					<td>${livro.titulo }</td>
-					<td>${livro.autor }</td>
-					<td>${livro.editora }</td>
-					<td>${livro.anoPub} </td>
-					<td>${livro.edicao }</td>
-					<td><a href="/BibliotecaS/livros/remover?id=${livro.id }"> remover </a></td>
-					
+				
+					<td>${salgados.id }</td>
+					<td>${salgados.nome }</td>
+					<td>${salgados.recheio }</td>
+					<td>${salgados.preco }</td>
+					<td><a href="/DonnaGula/salgados/remover?id=${salgados.id }"> remover </a></td>
 				</tr>
+				
 			</c:forEach>
 
 		</tbody>
 
 	</table>
-	
 	</div>
 </body>
 </html>

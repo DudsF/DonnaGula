@@ -1,13 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastrando livro</title>
+<title>Cadastrando salgados</title>
 </head>
+
 <style>
+body {
+	background-image: url("http://weekon.com.ar/wp-content/uploads/2016/12/biblio-web.jpg");
+    background-repeat: no-repeat;
+	background-size: 1366px 655px;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -19,7 +26,13 @@ input[type=text], select, textarea {
 	border-radius: 5px;
 	resize: vertical;
 }
-
+input[type=password], select, textarea {
+	width: 90%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: vertical;
+}
 label {
 	padding: 12px 12px 12px 0;
 	display: inline-block;
@@ -67,6 +80,7 @@ input[type=submit]:hover {
 	margin-top: 5px;
 }
 
+
 .row:after {
 	content: "";
 	display: table;
@@ -87,64 +101,52 @@ input[type=submit]:hover {
 
 	<div class="container">
 	<div class="centralizado">
-		<h1>Adicionar Livro</h1>
+		<h1>Disponibilizar salgados</h1>
 		</div>
-		<form action="/BibliotecaS/livros" method="post">
-
+		<form action="/DonnaGula/salgados" method="post">
+			
+			<fieldset>
+        		<legend>Upload Foto</legend>
+        		<p>Sua foto:<br>
+       			<input name="foto" type="file" value="Carregue sua foto!" id="foto">
+       			</p>
+        	</fieldset>
+        	
 			<div class="row">
 				<div class="col-25">
-					<label for="fname">Título</label>
+					<label for="fname">Nome:</label>
 				</div>
 				<div class="col-75">
-				<input type="text" id="fname" name="titulo"placeholder="Ex: A culpa é da estrelas.">
+				<input type="text" id="fname" name="nome">
 				</div>
 			</div>
+			
 
 			<div class="row">
 				<div class="col-25">
-					<label for="lname">Autor</label>
+					<label for="lname">Recheio:</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="lname" name="autor" placeholder="Ex: John Green">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-25">
-					<label for="country">Editora</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="lname" name="editora"placeholder="Ex: E. P. Dutton">
-				</div>
-			</div>
-
-
-			<div class="row">
-				<div class="col-25">
-					<label for="country">Ano de publicação</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="lname" name="anoPub" maxlength="14"placeholder="Ex: 2012">
+					<input type="text" id="lname" name="recheio" >
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-25">
-					<label for="country">Edição</label>
+					<label for="country">Preço:</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="lname" name="edicao"placeholder=" Ex: 1">
+					<input type="text" id="lname" name="preco">
 				</div>
 			</div>
 
+
 			<div class="row">
-				<input type="submit" value="Cadastrar">
+				<input type="submit" value="Disponibilizar"/>
+			
 			</div>
+			
 		</form>
 	</div>
-
-	
-
-</style>
 </body>
 </html>

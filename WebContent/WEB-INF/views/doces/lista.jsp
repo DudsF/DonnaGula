@@ -55,7 +55,7 @@
 	color: LightCoral ;
 }
 </style>
-<title>Cardápio</title>
+<title>Cardápio de Doces</title>
 </head>
 <body>
 <c:import url= "../menu.jsp"></c:import>
@@ -63,7 +63,7 @@
 
 <div class="container">
 	<div class="centralizado">
-		<h1>Cardápio</h1>
+		<h1>Cardápio de Doces</h1>
 		</div>
 <table id="customers">
 		<thead>

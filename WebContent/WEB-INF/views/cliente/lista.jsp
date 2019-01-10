@@ -55,7 +55,7 @@
 	color: LightCoral ;
 }
 </style>
-<title>Listagem de aluno</title>
+<title>Lista de Clientes</title>
 </head>
 <body>
 <c:import url= "../menu.jsp"></c:import>

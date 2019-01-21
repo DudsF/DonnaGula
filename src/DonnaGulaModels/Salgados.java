@@ -4,7 +4,7 @@ public class Salgados {
 	private long id;
 	private String nome;
 	private String recheio;
-	private int preco;
+	private float preco;
 	
 	@Override
 	public String toString() {
@@ -35,14 +35,15 @@ public class Salgados {
 		this.recheio = recheio;
 	}
 
-	public int getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(int preco) {
+	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-		
+
+	
 
 	}
 

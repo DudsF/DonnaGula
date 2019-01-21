@@ -25,7 +25,7 @@ private Connection connection;
 
 			a.setString(1, salgados.getNome());
 			a.setString(2, salgados.getRecheio());
-			a.setInt(3, salgados.getPreco());
+			a.setDouble(3, salgados.getPreco());
 		
 
 			a.execute();
@@ -56,7 +56,7 @@ private Connection connection;
 				salgados.setId(rs.getLong("id"));
 				salgados.setNome(rs.getString("nome"));
 				salgados.setRecheio(rs.getString("recheio"));
-				salgados.setPreco(rs.getInt("preco"));
+				salgados.setPreco(rs.getFloat("preco"));
 				
 
 				// adicionando o objeto � lista
@@ -77,7 +77,7 @@ private Connection connection;
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, salgados.getNome());
 			stmt.setString(2, salgados.getRecheio());
-			stmt.setInt(3, salgados.getPreco());
+			stmt.setDouble(3, salgados.getPreco());
 			stmt.setLong(4, salgados.getId());
 			stmt.execute();
 			stmt.close();
@@ -116,7 +116,7 @@ private Connection connection;
 				result.setId(rs.getLong("id"));
 				result.setNome(rs.getString("nome"));
 				result.setRecheio(rs.getString("recheio"));
-				result.setPreco(rs.getInt("preco"));
+				result.setPreco(rs.getFloat("preco"));
 				
 			}
 			rs.close();
@@ -141,7 +141,7 @@ private Connection connection;
 				result.setId(rs.getLong("id"));
 				result.setNome(rs.getString("nome"));
 				result.setRecheio(rs.getString("recheio"));
-				result.setPreco(rs.getInt("preco"));
+				result.setPreco(rs.getFloat("preco"));
 				
 			}
 			rs.close();
@@ -166,7 +166,7 @@ private Connection connection;
 				salgados.setId(rs.getLong("id"));
 				salgados.setNome(rs.getString("nome"));
 				salgados.setRecheio(rs.getString("recheio"));
-				salgados.setPreco(rs.getInt("preco"));
+				salgados.setPreco(rs.getFloat("preco"));
 				
 
 				// adicionando o objeto � lista
@@ -194,7 +194,7 @@ private Connection connection;
 				salgados.setId(rs.getLong("id"));
 				salgados.setNome(rs.getString("nome"));
 				salgados.setRecheio(rs.getString("recheio"));
-				salgados.setPreco(rs.getInt("preco"));
+				salgados.setPreco(rs.getFloat("preco"));
 				
 			}
 			rs.close();

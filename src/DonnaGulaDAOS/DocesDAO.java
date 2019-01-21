@@ -25,7 +25,7 @@ public class DocesDAO {
 
 			a.setString(1, doces.getNome());
 			a.setString(2, doces.getRecheio());
-			a.setInt(3, doces.getPreco());
+			a.setDouble(3, doces.getPreco());
 		
 
 			a.execute();
@@ -56,7 +56,7 @@ public class DocesDAO {
 				doces.setId(rs.getLong("id"));
 				doces.setNome(rs.getString("nome"));
 				doces.setRecheio(rs.getString("recheio"));
-				doces.setPreco(rs.getInt("preco"));
+				doces.setPreco(rs.getFloat("preco"));
 				
 
 				// adicionando o objeto � lista
@@ -77,7 +77,7 @@ public class DocesDAO {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, doces.getNome());
 			stmt.setString(2, doces.getRecheio());
-			stmt.setInt(3, doces.getPreco());
+			stmt.setDouble(3, doces.getPreco());
 			stmt.setLong(4, doces.getId());
 			stmt.execute();
 			stmt.close();
@@ -116,7 +116,7 @@ public class DocesDAO {
 				result.setId(rs.getLong("id"));
 				result.setNome(rs.getString("nome"));
 				result.setRecheio(rs.getString("Recheio"));
-				result.setPreco(rs.getInt("preco"));
+				result.setPreco(rs.getFloat("preco"));
 				
 			}
 			rs.close();
@@ -141,7 +141,7 @@ public class DocesDAO {
 				result.setId(rs.getLong("id"));
 				result.setNome(rs.getString("nome"));
 				result.setRecheio(rs.getString("recheio"));
-				result.setPreco(rs.getInt("preco"));
+				result.setPreco(rs.getFloat("preco"));
 				
 			}
 			rs.close();
@@ -166,7 +166,7 @@ public class DocesDAO {
 				doces.setId(rs.getLong("id"));
 				doces.setNome(rs.getString("nome"));
 				doces.setRecheio(rs.getString("recheio"));
-				doces.setPreco(rs.getInt("preco"));
+				doces.setPreco(rs.getFloat("preco"));
 				
 
 				// adicionando o objeto � lista
@@ -194,7 +194,7 @@ public class DocesDAO {
 				doces.setId(rs.getLong("id"));
 				doces.setNome(rs.getString("nome"));
 				doces.setRecheio(rs.getString("Recheio"));
-				doces.setPreco(rs.getInt("preco"));
+				doces.setPreco(rs.getFloat("preco"));
 				
 			}
 			rs.close();

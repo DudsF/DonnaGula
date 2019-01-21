@@ -10,6 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import DonnaGulaDAOS.ClientDAO;
 import DonnaGulaModels.Cliente;
+import daos.ContatoDAO;
+import models.Contato;
 
 
 @Controller
@@ -47,7 +49,16 @@ public class ClientController {
 		
 		return "redirect:../cliente";
 }
-	@RequestMapping ("/cliente/alterar")
+	@RequestMapping("/selecionar")
+	public ModelAndView selecionar(Cliente cliente) {
+		ClientDAO clienteDAO = new ClientDAO();
+		clienteDAO = ClientDAO.getById(clienteDAO.getId());
+		
+		ModelAndView model = new ModelAndView("cliente/form-alterar");
+		model.addObject("cliente", cliente);
+		return model;
+	}
+	@RequestMapping ("/alterar")
 	public String alterar(Cliente cliente) {
 		System.out.println("Chamou o metodo alterar");
 		ClientDAO clientDAO = new ClientDAO();

@@ -89,7 +89,7 @@
 					<td>${cliente.contato }</td>
 					<td>${cliente.cartao }</td>
 					
-					<td><a href="/DonnaGula/cliente/cliente-alterar?id=${cliente.id }"> Editar </a></td>
+					<td><a href="/DonnaGula/cliente/selecionar?id=${cliente.id }"> Editar </a></td>
 					<td><a href="/DonnaGula/cliente/remover?id=${cliente.id }"> Remover </a></td>
 				</tr>
 				

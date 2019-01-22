@@ -1,5 +1,7 @@
 package DonnaGulaControllers;
 
+
+
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -10,8 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import DonnaGulaDAOS.ClientDAO;
 import DonnaGulaModels.Cliente;
-import daos.ContatoDAO;
-import models.Contato;
+
 
 
 @Controller
@@ -49,16 +50,16 @@ public class ClientController {
 		
 		return "redirect:../cliente";
 }
-	@RequestMapping("/selecionar")
+	@RequestMapping("cliente/selecionar")
 	public ModelAndView selecionar(Cliente cliente) {
 		ClientDAO clienteDAO = new ClientDAO();
-		clienteDAO = ClientDAO.getById(clienteDAO.getId());
+		cliente = clienteDAO.getById(cliente.getId());
 		
-		ModelAndView model = new ModelAndView("cliente/form-alterar");
+		ModelAndView model = new ModelAndView("cliente/cliente-alterar");
 		model.addObject("cliente", cliente);
 		return model;
 	}
-	@RequestMapping ("/alterar")
+	@RequestMapping ("cliente/alterar")
 	public String alterar(Cliente cliente) {
 		System.out.println("Chamou o metodo alterar");
 		ClientDAO clientDAO = new ClientDAO();

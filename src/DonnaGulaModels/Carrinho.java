@@ -3,39 +3,54 @@ package DonnaGulaModels;
 public class Carrinho {
 	
 	private long id;
-	private String doce;
-	private String salgado;
+	private Doces doces;
+	private Salgados salgados;
 	private int quantidade;
-	private String preco;
+	private float preco;
 	
+	@Override
+	public String toString() {
+		return " carrinho [id=" + id + ", doces=" + doces + ", salgados=" + salgados + ", quantidade=" + 
+			quantidade	+ ", preco=" + preco + "]";
+	}
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getDoce() {
-		return doce;
+
+	public Doces getDoces() {
+		return doces;
 	}
-	public void setDoce(String doce) {
-		this.doce = doce;
+
+	public void setDoces(Doces doces) {
+		this.doces = doces;
 	}
-	public String getSalgado() {
-		return salgado;
+
+	public Salgados getSalgados() {
+		return salgados;
 	}
-	public void setSalgado(String salgado) {
-		this.salgado = salgado;
+
+	public void setSalgados(Salgados salgados) {
+		this.salgados = salgados;
 	}
+
 	public int getQuantidade() {
 		return quantidade;
 	}
+
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	public String getPreco() {
+
+	public float getPreco() {
 		return preco;
 	}
-	public void setPreco(String preco) {
+
+	public void setPreco(float preco) {
 		this.preco = preco;
 	}
 	

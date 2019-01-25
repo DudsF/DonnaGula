@@ -143,15 +143,12 @@ form.example::after {
 	<div class="centralizado">
 		<h1>Realize seus pedidos!</h1>
 		</div>
-		<form action="/DonnaGula/Carrinho/form" method="post">
+		<form action="/DonnaGula/Carrinho/TudoCar" method="post">
 			
-				<h2>Pesquise doces ou salgados!</h2>
-	<form name="frmBusca" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>?a=buscar" >
-    <input type="text" name="palavra" />
-    <input type="submit" value="Buscar" />
-	</form>
- 
-} 
-</form>
+			
+			
+		</form>
+	</div>
+
 </body>
 </html>

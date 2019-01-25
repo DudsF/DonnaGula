@@ -223,6 +223,31 @@ public class ClientDAO {
 		}
 
 	}
+		public List<Cliente> usuarioExiste() {
+			List<Cliente> result = new ArrayList<>();
+
+			try {
+				PreparedStatement stmt = this.connection.prepareStatement("select * from cliente where nome;");
+				ResultSet rs = stmt.executeQuery();
+
+				while (rs.next()) {
+					// criando o objeto Cliente
+					Cliente cliente = new Cliente();
+					cliente.setNome(rs.getString("nome"));
+					cliente.setSenha(rs.getString("senha"));
+
+					// adicionando o objeto � lista
+					result.add(cliente);
+				}
+				rs.close();
+				stmt.close();
+
+				return result;
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+			}
+
+	}
 
 
 }

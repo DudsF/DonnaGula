@@ -206,6 +206,7 @@ span.psw {
   
     <li><a class="dropbtn" href="/DonnaGula/cliente/">Nossos Clientes</a></li>
    <li><a class="dropbtn" href="/DonnaGula/Carrinho/form">Carrinho</a></li>
+   
   <li style="float:right">
  <button onclick="document.getElementById('id01').style.display='block'" style="float:right">Entrar</button>
 
@@ -214,7 +215,7 @@ span.psw {
   <form class="modal-content animate" action="/action_page.php">
    
 
-    <div class="container">
+  	 <div class="container">
       <label for="uname"><b>Nome</b></label>
       <input type="text"  name="uname" required>
 
@@ -248,10 +249,16 @@ window.onclick = function(event) {
  </li>
   <li style="float:right">
     <a href="/DonnaGula/cliente/form" class="active">Cadastre-se</a>
+    <li style="float:right">
+    <a href="/DonnaGula/loginForm" class="active">EntrarCerto</a>
     
     </li>
 </ul>
+<html>
+          <body>
 
+          </body>
+      </html>
 
 </body>
 </html>

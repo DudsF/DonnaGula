@@ -4,6 +4,8 @@ package DonnaGulaControllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -66,6 +68,20 @@ public class ClientController {
 		clientDAO.alterar(cliente);
 		
 		return "redirect:../cliente";
+}
+	 @RequestMapping("loginForm")
+     public String loginForm() {
+		 System.out.println("Login Formulario");
+         return "cliente/formulario-login";
+     }
+	 
+	 @RequestMapping("/efetuaLogin")
+     public String efetuaLogin(Cliente cliente, HttpSession session) {
+         if(new ClientDAO().usuarioExiste() != null) {
+             session.setAttribute("usuarioLogado", cliente);
+             return "menu";
+         }
+         return "redirect:../cliente";
 }
 	@RequestMapping("/cliente/login")
 	public String login() {

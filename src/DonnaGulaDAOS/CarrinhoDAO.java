@@ -72,4 +72,34 @@ public class CarrinhoDAO {
 		}
 			return lista;
 	}
+	public List<Carrinho> getPesquisar() {
+		List<Carrinho> lista = new ArrayList<Carrinho>();
+			
+			try {
+				
+			PreparedStatement stmt = this.connection.prepareStatement("select * from carrinho where doce like '%brigadeiro%' ");
+			ResultSet rs = stmt.executeQuery();
+
+			
+
+			while (rs.next()) {
+				Carrinho carrinho = new Carrinho();
+				Doces doces = new DocesDAO().getByNome(rs.getString("doce"));
+				Salgados salgados = new SalgadosDAO().getByNome(rs.getString("salgado"));
+				carrinho.setDoces(doces);
+				carrinho.setSalgados(salgados);
+
+				lista.add(carrinho);
+			}
+			rs.close();
+
+			stmt.close();
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			return lista;
+	}
+    
+     
 }

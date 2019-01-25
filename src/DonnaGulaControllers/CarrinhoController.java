@@ -34,9 +34,8 @@ public class CarrinhoController {
 			System.out.println("Chamou método de listagem");
 			CarrinhoDAO carrinDAO = new CarrinhoDAO();
 			List<Carrinho> lista = carrinDAO.getLista();
-			ModelAndView model = new ModelAndView("Carrinho/carrinho");
+			ModelAndView model = new ModelAndView("Carrinho/TudoCar");
 			model.addObject("carrinho", lista);
 			return model;
 		}
-
 }

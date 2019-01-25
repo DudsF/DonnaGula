@@ -100,6 +100,7 @@ input[type=submit]:hover {
 
 	<div class="container">
 	<div class="centralizado">
+	
 		<h1>Disponibilizar doces</h1>
 		</div>
 		<form action="/DonnaGula/doces" method="post">
@@ -147,10 +148,6 @@ input[type=submit]:hover {
 			
 		</form>
 	</div>
-
-	
-
-
 
 </body>
 </html>

@@ -63,15 +63,15 @@
 <div class="container">
 
 <div class= "centraliza">
-<h1>Emprestimos Abertos</h1>
+<h1>Pedidos</h1>
 </div>
 <table id="customers">
 		<thead>
 			<tr>
-				<th>Livro</th>
+				<th></th>
 				<th>Nome</th>
-				<th>Data do emprestimo</th>
-				<th>Data de Devolução</th>
+				<th>Data do Pedido</th>
+				<th>Data de Entrega</th>
 			</tr>
 		</thead>
 		<tbody>

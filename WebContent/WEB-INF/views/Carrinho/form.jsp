@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<!DOCTYPE html>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Carrinho</title>
+</head>
 <style>
 body {
 	background-image: url("http://weekon.com.ar/wp-content/uploads/2016/12/biblio-web.jpg");
@@ -91,48 +93,66 @@ input[type=submit]:hover {
 		width: 100%;
 		margin-top: 0;
 	}
-
 	
+}
+<style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: right;
+  width: 30%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 </style>
 </head>
 <body>
-
 <c:import url="../menu.jsp"></c:import>
 
 	<div class="container">
 	<div class="centralizado">
-	<h1>Alterar Cliente </h1>
-		<form action="/DonnaGula/cliente/alterar" method="post">
-			<input type="hidden" readonly="readonly" name="id" value="${cliente.id}">
+		<h1>Realize seus pedidos!</h1>
 		</div>
-		
-		<div>
-			<label>Nome: </label> 
-			<input type="text" name="nome" value="${cliente.nome}">
-		</div>
-		<div>
-			<label>Endereço: </label> 
-			<input type="text" name="endereco"value="${cliente.endereco}">
-		</div>
-		<div>
-			<label>Email: </label> 
-			<input type="text" name="email"value="${cliente.email}">
-		</div>
-		<div>
-			<label>Contato: </label> 
-			<input type="text" name="contato"value="${cliente.contato}">
-		</div>
-		<div>
-			<label>Cartao: </label> 
-			<input type="text" name="cartao"value="${cliente.cartao}">
-		</div>
-		<div>
-			<label>Senha: </label> 
-			<input type="text" name="senha"value="${cliente.senha}">
-		</div>
-			<button type="submit">Alterar</button>
-		</div>
-	
+		<form action="/DonnaGula/Carrinho/form" method="post">
+			
+				<h2>Pesquise doces ou salgados!</h2>
+
+	<form class="example" action="/action_page.php" style="margin:auto;max-width:400px">
+ 	 <input type="text" placeholder="Ex: Coxinha." name="search2">
+  	<button type="submit"><i class="fa fa-search"></i></button>
+			
+		</form>
+	</div>
+
 </body>
 </html>

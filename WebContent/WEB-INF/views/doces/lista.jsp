@@ -63,8 +63,10 @@
 
 <div class="container">
 	<div class="centralizado">
-		<h1>Cardápio de Doces</h1>
+		<h1>Cardápio de Salgados</h1>
 		</div>
+<table id="customers">
+
 <table id="customers">
 		<thead>
 			<tr>

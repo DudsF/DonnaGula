@@ -8,10 +8,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.Query;
+
 import DonnaGulaModels.Cliente;
 
 public class ClientDAO {
 
+	private static final String Conexao = null;
+	private static final String HibernateUtil = null;
 	private Connection connection;
 
 	public ClientDAO() {
@@ -247,9 +251,33 @@ public class ClientDAO {
 				throw new RuntimeException(e);
 			}
 
-	}
-
-
+		}
+		public List<Cliente> getselecthemocomponentesusuarios(Cliente dados){
+	        List<Cliente> dadoscliente = new ArrayList<Cliente
+	        		>();
+	        try {
+	            PreparedStatement stmt = this.connection.prepareStatement("select * from cliente where nome=? and senha=?");
+	            stmt.setString(1, dados.getNome());
+	            stmt.setString(2, dados.getSenha());
+	            ResultSet rs = stmt.executeQuery();
+	            while (rs.next()){
+	                Cliente cliente = new Cliente();
+	                cliente.setNome(rs.getString("nome"));
+	                cliente.setSenha(rs.getString("senha"));
+	                cliente.setId(rs.getLong("id"));
+	                dadoscliente.add(cliente);
+	                System.err.println(cliente.getSenha()+" "+cliente.getNome()+" "+ cliente.getId());
+	            }
+	            rs.close();
+	            stmt.close();
+	            return dadoscliente;
+	        } catch (SQLException e) {
+	            throw new RuntimeException(e);
+	        }
+	        
+	   
+		
+		}
 }
 
 

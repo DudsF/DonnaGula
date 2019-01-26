@@ -9,20 +9,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import DonnaGulaDAOS.CarrinhoDAO;
+import DonnaGulaDAOS.DocesDAO;
+import DonnaGulaDAOS.SalgadosDAO;
 import DonnaGulaModels.Carrinho;
+import DonnaGulaModels.Doces;
+import DonnaGulaModels.Salgados;
+
 
 
 @Controller
 public class CarrinhoController {
+	
+	@RequestMapping("/Carrinho/form")
+	public ModelAndView form() {
+		System.out.println("Chamou o meu método");
+		DocesDAO doceDAO = new DocesDAO();
+		List<Doces> listaA = doceDAO.getDoces();
 
-		@RequestMapping("/Carrinho/form")
-		public String form() {
-			System.out.println("Chamou meu método de formulário");
-			return "Carrinho/form";
-		}
+		SalgadosDAO salgadoDAO = new SalgadosDAO();
+		List<Salgados> listaL = salgadoDAO.getSalgados();
+
+		ModelAndView model = new ModelAndView("Carrinho/form");
+
+		model.addObject("doce", listaA);
+		model.addObject("salgado", listaL);
+
+		return model;
+
+	}
 		
 		@PostMapping("/Carrinho")
-		public String adicionar(Carrinho carrinho) {
+		public String inserir(Carrinho carrinho) {
 			System.out.println("Chamou o método de adicionar");
 			CarrinhoDAO carrinDAO = new CarrinhoDAO();
 			carrinDAO.inserir(carrinho);

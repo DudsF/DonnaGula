@@ -145,13 +145,74 @@ form.example::after {
 		</div>
 		<form action="/DonnaGula/Carrinho/form" method="post">
 			
-				<h2>Pesquise doces ou salgados!</h2>
-	<form name="frmBusca" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>?a=buscar" >
-    <input type="text" name="palavra" />
-    <input type="submit" value="Buscar" />
+	<div class="row">
+			
+				<div class="col-25">
+					<label for="fname">Doce</label>
+				</div>
+				
+				<div class="col-75">
+				<select name="doces.id">
+				<c:forEach var="doces" items="${doce }">
+					<option value="${doces.id }">${doces.nome }</option>
+				</c:forEach>
+				</select>
+				<div class="col-25">
+					<label for="fname">Quantidade</label>
+				</div>
+				<div class="col-75">
+					<select name="quantidade">
+				<option value="valor0"selected>0</option> 
+  				<option value="valor">1</option> 
+ 				<option value="valor2" >2</option>
+  				<option value="valor3">3</option>
+  				<option value="valor4">4</option> 
+ 				<option value="valor5" >5</option>
+  				<option value="valor6">6</option>
+  				<option value="valor7">7</option> 
+ 				<option value="valor8" >8</option>
+  				<option value="valor9">9</option>
+				</select>
+		</div>
+		</div>
+		
+		<div class="row">
+		
+				<div class="col-25">
+					<label for="fname">Salgados</label>
+				</div>
+				
+				<div class="col-75">
+				<select name="salgados.id">
+				<c:forEach var="salgados" items="${salgado }">
+				<option value="${salgados.id }">${salgados.nome }</option>
+				
+			
+				</select>
+				<div class="col-25">
+					<label for="fname">Quantidade</label>
+				</div>
+				<div class="col-75">
+				<select name="carrinho.quantidade">
+  				<option value="valor0"selected>0</option> 
+  				<option value="valor1" >1</option>
+ 				<option value="valor2" >2</option>
+  				<option value="valor3">3</option>
+  				<option value="valor4">4</option> 
+ 				<option value="valor5" >5</option>
+  				<option value="valor6">6</option>
+  				<option value="valor7">7</option> 
+ 				<option value="valor8" >8</option>
+  				<option value="valor9">9</option>
+				</c:forEach>
+				</select>
+				</div>
+		</div>
+		<div class="row">
+				<input type="submit" value="Pedir">
+			</div>
 	</form>
- 
-} 
+	</div>
 </form>
 </body>
 </html>

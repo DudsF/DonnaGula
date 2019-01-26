@@ -1,5 +1,4 @@
 package DonnaGulaDAOS;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +11,6 @@ import DonnaGulaModels.Carrinho;
 import DonnaGulaModels.Doces;
 import DonnaGulaModels.Salgados;
 
-
 public class CarrinhoDAO {
 	private Connection connection;
 
@@ -22,14 +20,14 @@ public class CarrinhoDAO {
 
 	public boolean inserir(Carrinho carrinho) {
 
-		String sql = "insert into carrinho (id, salgado, doce, quantidade, preco) values ( ?, ?, ?, ?);";
+		String sql = "insert into carrinho (salgado, doce, quantidade, preco) values ( ?, ?, ?, ?);";
 
 	try{
 		
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		
-		stmt.setLong(1, carrinho.getDoces().getId());
-		stmt.setLong(2, carrinho.getSalgados().getId());
+		stmt.setLong(1, carrinho.getSalgados().getId());
+		stmt.setLong(2, carrinho.getDoces().getId());
 		stmt.setInt(3, carrinho.getQuantidade());
 		stmt.setFloat(4, carrinho.getPreco());
 		
@@ -100,6 +98,42 @@ public class CarrinhoDAO {
 		}
 			return lista;
 	}
-    
-     
+	private Carrinho formacaoCarrinho(ResultSet rs) throws SQLException {
+		Carrinho carrinho = new Carrinho();
+		
+		carrinho.setId(rs.getLong("id"));
+		Doces doce = new DocesDAO().getById(rs.getLong("doce"));
+		carrinho.setDoces(doce);
+		Salgados salgado = new SalgadosDAO().getById(rs.getLong("salgado"));
+		carrinho.setSalgados(salgado);
+		
+		
+		//if (rs.getDate("dataDevolucao") != null) {
+		 //Calendar data2 = Calendar.getInstance();
+			//data2.setTime(rs.getDate("dataDevolucao"));
+			//carrinho.setDataDevolucao(data2);
+
+		return carrinho;
+		}
+	public Carrinho getCarrinhoByID(Long id) {
+		try {
+
+			Carrinho carrinho = null;
+			
+			PreparedStatement stmt = this.connection.prepareStatement("select * from carrinho where id=?;");
+			stmt.setLong(1, id);
+			ResultSet rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+				carrinho = formacaoCarrinho(rs);
+			}
+			rs.close();
+			stmt.close();
+			return carrinho;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+
+		}
+	}
+	
 }

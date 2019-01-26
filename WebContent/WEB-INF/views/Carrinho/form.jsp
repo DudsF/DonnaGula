@@ -143,7 +143,7 @@ form.example::after {
 	<div class="centralizado">
 		<h1>Realize seus pedidos!</h1>
 		</div>
-		<form action="/DonnaGula/Carrinho/form" method="post">
+		<form action="/DonnaGula/Carrinho/" method="post">
 			
 	<div class="row">
 			
@@ -161,17 +161,10 @@ form.example::after {
 					<label for="fname">Quantidade</label>
 				</div>
 				<div class="col-75">
-					<select name="quantidade">
-				<option value="valor0"selected>0</option> 
-  				<option value="valor">1</option> 
- 				<option value="valor2" >2</option>
-  				<option value="valor3">3</option>
-  				<option value="valor4">4</option> 
- 				<option value="valor5" >5</option>
-  				<option value="valor6">6</option>
-  				<option value="valor7">7</option> 
- 				<option value="valor8" >8</option>
-  				<option value="valor9">9</option>
+					<select name="carrinho.quantidade">
+				<option value="${quantidade}"selected>0</option> 
+  				<option value="${quantidade}">1</option> 
+ 				<option value="${quantidade}" >2</option>
 				</select>
 		</div>
 		</div>
@@ -193,17 +186,12 @@ form.example::after {
 					<label for="fname">Quantidade</label>
 				</div>
 				<div class="col-75">
-				<select name="carrinho.quantidade">
-  				<option value="valor0"selected>0</option> 
-  				<option value="valor1" >1</option>
- 				<option value="valor2" >2</option>
-  				<option value="valor3">3</option>
-  				<option value="valor4">4</option> 
- 				<option value="valor5" >5</option>
-  				<option value="valor6">6</option>
-  				<option value="valor7">7</option> 
- 				<option value="valor8" >8</option>
-  				<option value="valor9">9</option>
+				<select name="carrinho">
+				<c:forEach var="carrinho.id" items="${carrinho }">
+  				<option value="${carrinho.id}"selected>0</option> 
+  				<option value="${carrinho.id}">{quantidade.1}</option>
+ 				
+				</c:forEach>
 				</c:forEach>
 				</select>
 				</div>

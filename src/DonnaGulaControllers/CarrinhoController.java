@@ -19,7 +19,6 @@ import DonnaGulaModels.Salgados;
 
 @Controller
 public class CarrinhoController {
-	
 	@RequestMapping("/Carrinho/form")
 	public ModelAndView form() {
 		System.out.println("Chamou o meu método");
@@ -37,20 +36,19 @@ public class CarrinhoController {
 		return model;
 
 	}
-		
-		@PostMapping("/Carrinho")
+		@PostMapping("/Carrinho/")
 		public String inserir(Carrinho carrinho) {
 			System.out.println("Chamou o método de adicionar");
 			CarrinhoDAO carrinDAO = new CarrinhoDAO();
 			carrinDAO.inserir(carrinho);
-			return "redirect:Carrinho/";
+			return "redirect:/Carrinho";
 		}
 		
 		@GetMapping("/Carrinho")
 		public ModelAndView listar() {
 			System.out.println("Chamou método de listagem");
 			CarrinhoDAO carrinDAO = new CarrinhoDAO();
-			List<Carrinho> lista = carrinDAO.getLista();
+			List<Carrinho> lista = carrinDAO.getLista1();
 			ModelAndView model = new ModelAndView("Carrinho/TudoCar");
 			model.addObject("carrinho", lista);
 			return model;

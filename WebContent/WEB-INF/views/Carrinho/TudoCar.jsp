@@ -141,36 +141,34 @@ form.example::after {
 
 	<div class="container">
 	<div class="centralizado">
-		<h1> Seus pedidos!</h1>
+		<h1>Pedidos</h1>
 		</div>
-		<form action="/DonnaGula/Carrinho/TudoCar" method="post">
-			</div>
-
-<table id="customers">
+	<table id="customers">
 		<thead>
 			<tr>
-				
 				<th>Doce</th>
 				<th>Salgado</th>
-				
+				<th>Quantidade</th>
+				<th>Preço</th>
 			</tr>
+			
 		</thead>
 		<tbody>
-			<c:forEach var="carrinho" items="${carrinho }">
+			<c:forEach var="carrinho" items="${carrinho}">
 				<tr>
-					<td>${carrinho.doce.nome}</td>
-					<td>${carrinho.salgado.nome} </td>
-					<td><a href="/BibliotecaS/emprestimo/devolucao?id=${emprestimo.id} ">Fazer Devolução</a></td>
+				
+					<td>${carrinho.doces.nome }</td>
+					<td>${carrinho.salgados.nome }</td>
+					<td>${carrinho.quantidade }</td>
+					<td>${carrinho.preco }</td>
+					
 				</tr>
+				
 			</c:forEach>
 
 		</tbody>
 
 	</table>
-	</div>	
-			
-		</form>
 	</div>
-
 </body>
 </html>

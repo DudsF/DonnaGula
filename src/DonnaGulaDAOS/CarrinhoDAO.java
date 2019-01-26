@@ -20,7 +20,7 @@ public class CarrinhoDAO {
 
 	public boolean inserir(Carrinho carrinho) {
 
-		String sql = "insert into carrinho (salgado, doce, quantidade, preco) values ( ?, ?, ?, ?);";
+		String sql = "insert into carrinho(salgado, doce, quantidade, preco) values ( ?, ?, ?, ?);";
 
 	try{
 		
@@ -39,7 +39,6 @@ public class CarrinhoDAO {
 		e.printStackTrace();
 		return true;
 	}
-
 	return false;
 }
 	public List<Carrinho> getLista() {
@@ -134,6 +133,25 @@ public class CarrinhoDAO {
 			throw new RuntimeException(e);
 
 		}
+	}
+	public List<Carrinho> getLista1() {
+		try {
+
+			List<Carrinho> carrinho = new ArrayList<Carrinho>();
+			PreparedStatement stmt = connection.prepareStatement("select * from carrinho;");
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				carrinho.add (formacaoCarrinho(rs));
+				 
+			}
+			rs.close();
+			stmt.close();
+			return carrinho;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
 	}
 	
 }

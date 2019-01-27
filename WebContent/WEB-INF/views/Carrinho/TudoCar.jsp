@@ -19,7 +19,34 @@ body {
 * {
 	box-sizing: border-box;
 }
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    center;
+    
+     
+}
 
+#customers td, #customers th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#customers tr:nth-child{background-color: #F6CED8;}
+
+#customers tr:hover {background-color: lavender;}
+#customers th {
+	
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: LightCoral;
+    color: white;
+    }
+    
 input[type=text], select, textarea {
 	width: 90%;
 	padding: 12px;
@@ -171,15 +198,14 @@ form.example::after {
 					<td>${carrinho.quantidade }</td>
 					
 					<td>${carrinho.preco }</td>
-					<td><a href="/DonnaGula/Carrinho/selecionar?id=${carrinho.id }">Alterar Pedido</a></td>
 				
 				</tr>
 				
 			</c:forEach>
+
 		</tbody>
 
 	</table>
 	</div>
-	
 </body>
 </html>

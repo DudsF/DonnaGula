@@ -42,11 +42,13 @@ label {
 input[type=submit] {
 	background-color: #333;
 	color: white;
-	padding: 12px 20px;
+	padding: 10px 10px;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
 	float: right;
+	margin-top: 8px;
+	
 }
 
 input[type=submit]:hover {
@@ -73,14 +75,20 @@ input[type=submit]:hover {
 	float: left;
 	width: 25%;
 	margin-top: 8px;
+	margin-left: 1px;
+
 }
 
 .col-75 {
 	float: left;
-	width: 70%;
+	width: 30%;
 	margin-top: 5px;
 }
-
+.col-76 {
+	float: left;
+	width: 15%;
+	margin-top: 5px;
+}
 
 .row:after {
 	content: "";
@@ -157,10 +165,13 @@ form.example::after {
 					<option value="${doces.id }">${doces.nome }</option>
 				</c:forEach>
 				</select>
+				</div>
+				
 				<div class="col-25">
 					<label for="fname">Quantidade</label>
 				</div>
-				<div class="col-75">
+				
+				<div class="col-76">
 					<select name="carrinho.id">
 				<option value="${carrinho.quantidade}"selected>0</option> 
   				<option value="${carrinho.quantidade}">1</option> 
@@ -178,31 +189,30 @@ form.example::after {
 				<div class="col-75">
 				<select name="salgados.id">
 				<c:forEach var="salgados" items="${salgado }">
-				<option value="${salgados.id }">${salgados.nome }</option>		
+				<option value="${salgados.id }">${salgados.nome }</option>
+					</c:forEach>		
 				</select>
+				</div>
+				
 				<div class="col-25">
 					<label for="fname">Quantidade</label>
 				</div>
-				<div class="col-75">
+				
+				<div class="col-76">
 				<select name="carrinho.id">
-				<c:forEach var="carrinho.id" items="${carrinho }">
+				
   				<option value="${carrinho.id}"selected>0</option> 
- 				<div class="col-75">
- 				
- 				</div>
-				</c:forEach>
-				</c:forEach>
+  				<option value="${carrinho.quantidade}">1</option> 
+ 				<option value="${carrinho.quantidade}" >2</option>
 				</select>
+
 				</div>
 		</div>
 		<div class="row">
-		
-				<td><a href="/DonnaGula/cliente/remover?id=$"> Forma de Pagamento </a></td>
-				
+				<input type="submit" value="Escolha sua forrma de pagamento">
 				<input type="submit" value="Finalizar Pedido">
 			</div>
 	</form>
 	</div>
-</form>
 </body>
 </html>

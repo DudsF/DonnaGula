@@ -171,14 +171,15 @@ form.example::after {
 					<td>${carrinho.quantidade }</td>
 					
 					<td>${carrinho.preco }</td>
+					<td><a href="/DonnaGula/Carrinho/selecionar?id=${carrinho.id }">Alterar Pedido</a></td>
 				
 				</tr>
 				
 			</c:forEach>
-
 		</tbody>
 
 	</table>
 	</div>
+	
 </body>
 </html>

@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import DonnaGulaModels.Carrinho;
+import DonnaGulaModels.Cliente;
 import DonnaGulaModels.Doces;
 import DonnaGulaModels.Salgados;
 
@@ -20,7 +21,7 @@ public class CarrinhoDAO {
 
 	public boolean inserir(Carrinho carrinho) {
 
-		String sql = "insert into carrinho(salgado, doce, quantidade, quantidade, preco ) values ( ?, ?, ?, ?);";
+		String sql = "insert into carrinho(salgado, doce, quantidade) values ( ?, ?, ?, ?);";
 
 	try{
 		
@@ -54,10 +55,7 @@ public class CarrinhoDAO {
 				Carrinho carrinho = new Carrinho();
 				Doces doces = new DocesDAO().getByNome(rs.getString("doce"));
 				Salgados salgados = new SalgadosDAO().getByNome(rs.getString("salgado"));
-				carrinho.setQuantidade(0);
-				carrinho.setQuantidade(1);
-				carrinho.setQuantidade(3);
-				carrinho.setQuantidade(4);
+
 				carrinho.setDoces(doces);
 				carrinho.setSalgados(salgados);
 				
@@ -103,18 +101,14 @@ public class CarrinhoDAO {
 	}
 	private Carrinho formacaoCarrinho(ResultSet rs) throws SQLException {
 		Carrinho carrinho = new Carrinho();
-		
 		carrinho.setId(rs.getLong("id"));
 		Doces doce = new DocesDAO().getById(rs.getLong("doce"));
 		carrinho.setDoces(doce);
 		Salgados salgado = new SalgadosDAO().getById(rs.getLong("salgado"));
 		carrinho.setSalgados(salgado);
 		
-		
-
 		return carrinho;
 		}
-	
 	public Carrinho getCarrinhoByID(Long id) {
 		try {
 
@@ -153,6 +147,22 @@ public class CarrinhoDAO {
 			throw new RuntimeException(e);
 		}
 
+	}
+	public boolean alterar(Carrinho carrinho) {
+		String sql = "update cliente set doce=?, salgado=?, quantidade=? where id=?;";
+		try {
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setLong(1, carrinho.getSalgados().getId());
+			stmt.setLong(2, carrinho.getDoces().getId());
+			stmt.setInt(3, carrinho.getQuantidade());
+			
+			stmt.execute();
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 	
 }

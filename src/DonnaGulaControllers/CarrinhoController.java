@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import DonnaGulaDAOS.CarrinhoDAO;
+import DonnaGulaDAOS.ClientDAO;
 import DonnaGulaDAOS.DocesDAO;
 import DonnaGulaDAOS.SalgadosDAO;
 import DonnaGulaModels.Carrinho;
+import DonnaGulaModels.Cliente;
 import DonnaGulaModels.Doces;
 import DonnaGulaModels.Salgados;
 
@@ -53,4 +55,21 @@ public class CarrinhoController {
 			model.addObject("carrinho", lista);
 			return model;
 		}
+		@RequestMapping("Carrinho/selecionar")
+		public ModelAndView selecionar(Carrinho carrinho) {
+			CarrinhoDAO carrinDAO = new CarrinhoDAO();
+			carrinho = carrinDAO.getCarrinhoByID(carrinho.getId());
+			
+			ModelAndView model = new ModelAndView("Carrinho/carrinho-alterar");
+			model.addObject("carrinho", carrinho);
+			return model;
+		}
+		@RequestMapping ("Carrinho/alterar")
+		public String alterar(Carrinho carrinho) {
+			System.out.println("Chamou o metodo alterar");
+			CarrinhoDAO carrinDAO = new CarrinhoDAO();
+			carrinDAO.alterar(carrinho);
+			
+			return "redirect:../Carrinho";
+}
 }

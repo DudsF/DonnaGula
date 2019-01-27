@@ -218,7 +218,7 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="/DonnaGula/">
    
 
   	 <div class="container">
@@ -256,7 +256,6 @@ window.onclick = function(event) {
   <li style="float:right">
     <a href="/DonnaGula/cliente/form" class="active">Cadastre-se</a>
     <li style="float:right">
-    <a href="/DonnaGula/loginForm" class="active">EntrarCerto</a>
     
     </li>
 </ul>

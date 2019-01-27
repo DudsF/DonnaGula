@@ -85,7 +85,7 @@
 					<td>${doces.nome }</td>
 					<td>${doces.recheio }</td>
 					<td>${doces.preco }</td>
-					<td><a href="/DonnaGula/doces/remover?id=${doces.id }"> remover </a></td>
+					<td><a href="/DonnaGula/doces/selecionar?id=${doces.id }"> Adicionar ao carrinho </a></td>
 				</tr>
 				
 			</c:forEach>

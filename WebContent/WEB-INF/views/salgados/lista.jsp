@@ -83,7 +83,7 @@
 					<td>${salgados.nome }</td>
 					<td>${salgados.recheio }</td>
 					<td>${salgados.preco }</td>
-					<td><a href="/DonnaGula/salgados/remover?id=${salgados.id }"> remover </a></td>
+					<td><a href="/DonnaGula/salgados/selecionar?id=${salgados.id }"> Adicionar ao carrinho </a></td>
 				</tr>
 				
 			</c:forEach>

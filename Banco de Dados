@@ -1,0 +1,40 @@
+create database donna_gula;
+use donna_gula;
+
+create table doces(
+id bigint not null auto_increment,
+   nome varchar (255),
+   recheio varchar (255),
+   preco float, 
+   primary key (id)
+);
+
+create table salgados(
+id bigint not null auto_increment,
+    nome varchar (255),
+    recheio varchar (255),
+    preco float, 
+    primary key (id)
+);
+
+
+create table cliente(
+id bigint not null auto_increment,
+    nome varchar (255),
+    endereco varchar (255),
+    emailvarchar (255),
+    contato int,
+    cartao varchar (255), 
+senha varchar (255),
+    primary key (id)
+);
+
+
+ create table carrinho (
+    id bigint not null auto_increment,
+    salgado long,
+    doce long,
+    quantidade int,
+    preco float, 
+    primary key (id)
+);

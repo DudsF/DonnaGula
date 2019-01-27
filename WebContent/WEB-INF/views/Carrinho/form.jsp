@@ -208,10 +208,14 @@ form.example::after {
 				</c:forEach>
 				</div>
 		</div>
+		
 		<div class="row">
-				<input type="submit" value="Escolha sua forrma de pagamento">
 				<input type="submit" value="Finalizar Pedido">
+				
 			</div>
+			<div class="row">
+			 <input type="date">
+			 	</div>
 	</form>
 	</div>
 </body>

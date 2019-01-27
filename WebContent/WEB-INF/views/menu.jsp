@@ -255,7 +255,7 @@ window.onclick = function(event) {
  </li>
   <li style="float:right">
     <a href="/DonnaGula/cliente/form" class="active">Cadastre-se</a>
-    <li style="float:right">
+    <li style="float:right"> 
     
     </li>
 </ul>

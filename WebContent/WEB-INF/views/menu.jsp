@@ -205,7 +205,13 @@ span.psw {
   </li>
   
     <li><a class="dropbtn" href="/DonnaGula/cliente/">Nossos Clientes</a></li>
-   <li><a class="dropbtn" href="/DonnaGula/Carrinho/form">Carrinho</a></li>
+   <li class= "dropdown">
+  <a href="javascript:void(0)" class= "dropbtn">Carrinho</a>
+  <div class="dropdown-content">
+      <a href="/DonnaGula/Carrinho/form">Faça seu pedido</a>
+       <a href="/DonnaGula/Carrinho/">Seus pedidos</a>
+
+    </div></li>
    
   <li style="float:right">
  <button onclick="document.getElementById('id01').style.display='block'" style="float:right">Entrar</button>

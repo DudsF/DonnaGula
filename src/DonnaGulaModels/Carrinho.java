@@ -51,7 +51,7 @@ public class Carrinho {
 	}
 
 	public void setPreco(float preco) {
-		this.preco = preco;
+		this.preco = quantidade * preco;
 	}
 
 

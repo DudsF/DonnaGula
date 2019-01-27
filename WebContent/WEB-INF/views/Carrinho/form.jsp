@@ -199,13 +199,13 @@ form.example::after {
 				</div>
 				
 				<div class="col-76">
-				<select name="carrinho.id">
-				
-  				<option value="${carrinho.id}"selected>0</option> 
+				<select name="carrinho">
+				<c:forEach var="quantidade" items="${carrinho}">
+  				<option value="${carrinho.quantidade}"selected>0</option> 
   				<option value="${carrinho.quantidade}">1</option> 
- 				<option value="${carrinho.quantidade}" >2</option>
+ 				<option value="${carrinho.quantidade}">2</option>
 				</select>
-
+				</c:forEach>
 				</div>
 		</div>
 		<div class="row">

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Cliente alterar</title>
 <style>
 body {
 	background-image: url("http://weekon.com.ar/wp-content/uploads/2016/12/biblio-web.jpg");

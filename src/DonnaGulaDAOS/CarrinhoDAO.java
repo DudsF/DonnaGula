@@ -76,10 +76,8 @@ public class CarrinhoDAO {
 			
 			try {
 				
-			PreparedStatement stmt = this.connection.prepareStatement("select * from carrinho where doce like '%brigadeiro%' ");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from carrinho ");
 			ResultSet rs = stmt.executeQuery();
-
-			
 
 			while (rs.next()) {
 				Carrinho carrinho = new Carrinho();
@@ -149,12 +147,13 @@ public class CarrinhoDAO {
 
 	}
 	public boolean alterar(Carrinho carrinho) {
-		String sql = "update cliente set doce=?, salgado=?, quantidade=? where id=?;";
+		String sql = "update carrinho set doce=?, salgado=?, quantidade=?, preco=? where id=?;";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setLong(1, carrinho.getSalgados().getId());
 			stmt.setLong(2, carrinho.getDoces().getId());
 			stmt.setInt(3, carrinho.getQuantidade());
+			stmt.setFloat(4, carrinho.getPreco());
 			
 			stmt.execute();
 			stmt.close();

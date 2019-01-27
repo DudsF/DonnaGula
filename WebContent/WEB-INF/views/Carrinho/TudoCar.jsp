@@ -147,21 +147,31 @@ form.example::after {
 		<thead>
 			<tr>
 				<th>Doce</th>
-				<th>Salgado</th>
-				<th>Quantidade</th>
 				<th>Preço</th>
+				<th>Quantidade</th>
+				
+				<th>Salgado</th>
+				<th>Preço</th>
+				<th>Quantidade</th>
+				
+				<th>Preço Final</th>
 			</tr>
 			
 		</thead>
 		<tbody>
-			<c:forEach var="carrinho" items="${carrinho}">
+			<c:forEach var="carrinho" items="${carrinho }">
 				<tr>
 				
 					<td>${carrinho.doces.nome }</td>
-					<td>${carrinho.salgados.nome }</td>
+					<td>${carrinho.doces.preco }</td>
 					<td>${carrinho.quantidade }</td>
-					<td>${carrinho.preco }</td>
 					
+					<td>${carrinho.salgados.nome }</td>
+					<td>${carrinho.salgados.preco }</td>
+					<td>${carrinho.quantidade }</td>
+					
+					<td>${carrinho.preco }</td>
+				
 				</tr>
 				
 			</c:forEach>

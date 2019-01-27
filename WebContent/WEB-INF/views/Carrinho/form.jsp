@@ -161,10 +161,10 @@ form.example::after {
 					<label for="fname">Quantidade</label>
 				</div>
 				<div class="col-75">
-					<select name="carrinho.quantidade">
-				<option value="${quantidade}"selected>0</option> 
-  				<option value="${quantidade}">1</option> 
- 				<option value="${quantidade}" >2</option>
+					<select name="carrinho.id">
+				<option value="${carrinho.quantidade}"selected>0</option> 
+  				<option value="${carrinho.quantidade}">1</option> 
+ 				<option value="${carrinho.quantidade}" >2</option>
 				</select>
 		</div>
 		</div>
@@ -178,18 +178,15 @@ form.example::after {
 				<div class="col-75">
 				<select name="salgados.id">
 				<c:forEach var="salgados" items="${salgado }">
-				<option value="${salgados.id }">${salgados.nome }</option>
-				
-			
+				<option value="${salgados.id }">${salgados.nome }</option>		
 				</select>
 				<div class="col-25">
 					<label for="fname">Quantidade</label>
 				</div>
 				<div class="col-75">
-				<select name="carrinho">
+				<select name="carrinho.id">
 				<c:forEach var="carrinho.id" items="${carrinho }">
   				<option value="${carrinho.id}"selected>0</option> 
-  				<option value="${carrinho.id}">{quantidade.1}</option>
  				
 				</c:forEach>
 				</c:forEach>
@@ -197,7 +194,8 @@ form.example::after {
 				</div>
 		</div>
 		<div class="row">
-				<input type="submit" value="Pedir">
+				<input type="submit" value="Escolha sua forrma de pagamento">
+				<input type="submit" value="Finalizar Pedido">
 			</div>
 	</form>
 	</div>

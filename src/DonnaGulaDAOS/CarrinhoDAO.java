@@ -20,7 +20,7 @@ public class CarrinhoDAO {
 
 	public boolean inserir(Carrinho carrinho) {
 
-		String sql = "insert into carrinho(salgado, doce, quantidade, preco) values ( ?, ?, ?, ?);";
+		String sql = "insert into carrinho(salgado, doce, quantidade, quantidade, preco ) values ( ?, ?, ?, ?);";
 
 	try{
 		
@@ -29,7 +29,6 @@ public class CarrinhoDAO {
 		stmt.setLong(1, carrinho.getSalgados().getId());
 		stmt.setLong(2, carrinho.getDoces().getId());
 		stmt.setInt(3, carrinho.getQuantidade());
-		stmt.setFloat(4, carrinho.getPreco());
 		
 
 		stmt.execute();
@@ -55,8 +54,13 @@ public class CarrinhoDAO {
 				Carrinho carrinho = new Carrinho();
 				Doces doces = new DocesDAO().getByNome(rs.getString("doce"));
 				Salgados salgados = new SalgadosDAO().getByNome(rs.getString("salgado"));
+				carrinho.setQuantidade(0);
+				carrinho.setQuantidade(1);
+				carrinho.setQuantidade(3);
+				carrinho.setQuantidade(4);
 				carrinho.setDoces(doces);
 				carrinho.setSalgados(salgados);
+				
 
 				lista.add(carrinho);
 			}
@@ -107,13 +111,10 @@ public class CarrinhoDAO {
 		carrinho.setSalgados(salgado);
 		
 		
-		//if (rs.getDate("dataDevolucao") != null) {
-		 //Calendar data2 = Calendar.getInstance();
-			//data2.setTime(rs.getDate("dataDevolucao"));
-			//carrinho.setDataDevolucao(data2);
 
 		return carrinho;
 		}
+	
 	public Carrinho getCarrinhoByID(Long id) {
 		try {
 

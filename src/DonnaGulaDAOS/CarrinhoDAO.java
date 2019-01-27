@@ -4,11 +4,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.List;
 
 import DonnaGulaModels.Carrinho;
-import DonnaGulaModels.Cliente;
+
 import DonnaGulaModels.Doces;
 import DonnaGulaModels.Salgados;
 
@@ -21,7 +21,7 @@ public class CarrinhoDAO {
 
 	public boolean inserir(Carrinho carrinho) {
 
-		String sql = "insert into carrinho(salgado, doce, quantidade) values ( ?, ?, ?, ?);";
+		String sql = "insert into carrinho(salgado, doce, quantidade, preco) values ( ?, ?, ?,?);";
 
 	try{
 		
@@ -30,7 +30,7 @@ public class CarrinhoDAO {
 		stmt.setLong(1, carrinho.getSalgados().getId());
 		stmt.setLong(2, carrinho.getDoces().getId());
 		stmt.setInt(3, carrinho.getQuantidade());
-		
+		stmt.setFloat(4, carrinho.getPreco());
 
 		stmt.execute();
 		stmt.close();

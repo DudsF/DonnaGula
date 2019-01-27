@@ -70,7 +70,6 @@
 <table id="customers">
 		<thead>
 			<tr>
-				<th>Id</th>
 				<th>Nome</th>
 				<th>Recheio</th>
 				<th>Preço</th>
@@ -81,7 +80,6 @@
 			<c:forEach var="doces" items="${doces }">
 				<tr>
 				
-					<td>${doces.id }</td>
 					<td>${doces.nome }</td>
 					<td>${doces.recheio }</td>
 					<td>${doces.preco }</td>

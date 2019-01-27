@@ -154,7 +154,7 @@ form.example::after {
 		<form action="/DonnaGula/Carrinho/" method="post">
 			
 	<div class="row">
-			
+	
 				<div class="col-25">
 					<label for="fname">Doce</label>
 				</div>
@@ -216,6 +216,9 @@ form.example::after {
 			<div class="row">
 			 <input type="date">
 			 	</div>
+			 	<div class="row">
+			 <input type="Range">
+			 </div>
 	</form>
 	</div>
 </body>

@@ -6,10 +6,6 @@ public class Carrinho {
 	private Doces doces;
 	private Salgados salgados;
 	private int quantidade;
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
 	private float preco;
 	
 	@Override
@@ -42,6 +38,14 @@ public class Carrinho {
 		this.salgados = salgados;
 	}
 
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
 	public float getPreco() {
 		return preco;
 	}
@@ -49,11 +53,6 @@ public class Carrinho {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-
-	public int getQuantidade() {
-		return quantidade;
-	}
-
 
 
 }
